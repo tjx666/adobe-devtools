@@ -11,14 +11,14 @@
     </ExtensionList>
     <ExecutionEnvironment>
         <HostList>
-            <Host Name="PHSP" Version="20" />
-            <Host Name="PHXS" Version="20" />
+            <Host Name="PHSP" Version="22" />
+            <Host Name="PHXS" Version="22" />
         </HostList>
         <LocaleList>
             <Locale Code="All" />
         </LocaleList>
         <RequiredRuntimeList>
-            <RequiredRuntime Name="CSXS" Version="9" />
+            <RequiredRuntime Name="CSXS" Version="10" />
         </RequiredRuntimeList>
     </ExecutionEnvironment>
     <DispatchInfoList>

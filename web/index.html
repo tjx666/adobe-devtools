@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adobe Devtools</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script async>
+            (function () {
+                const fs = require('fs');
+                const path = require('path');
+
+                window.__loadExtendScriptStart = Date.now();
+                window.__loadExtendScriptPromise = new Promise((resolve, reject) => {
+                    const indexJsx = path.resolve(__dirname, './JSX/index.jsx');
+                    const indexJsxbin = path.resolve(__dirname, './JSX/index.jsxbin');
+                    const indexScriptPath = (
+                        fs.existsSync(indexJsx) ? indexJsx : indexJsxbin
+                    ).replace(/\\/g, '\\\\');
+                    const evalScript = window.__adobe_cep__.evalScript;
+
+                    try {
+                        evalScript(
+                            `$.appEncoding = "UTF-8";$.evalFile('${indexScriptPath}');`,
+                            (result) => {
+                                resolve(result);
+                            },
+                        );
+                    } catch (error) {
+                        reject(error);
+                    }
+                });
+            })();
+        </script>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
 </html>

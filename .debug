@@ -1,8 +1,8 @@
 <ExtensionList>
-    <Extension Id="com.gaoding.dev.psExport.panel">
+    <Extension Id="org.yutengjing.dev.devtools.panel">
         <HostList>
-            <Host Name="PHSP" Port="9999" />
-            <Host Name="PHXS" Port="9999" />
+            <Host Name="PHSP" Port="1270" />
+            <Host Name="PHXS" Port="1270" />
         </HostList>
     </Extension>
 </ExtensionList>    

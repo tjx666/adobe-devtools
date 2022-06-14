@@ -1,7 +1,19 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import optimizer from 'vite-plugin-optimizer';
+import tsconfig from './tsconfig.json';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
-})
+    plugins: [
+        vue(),
+        optimizer({
+            path: () => ({
+                find: /^path$/,
+                code: `const path = require('path'); export { path as default }`,
+            }),
+        }),
+    ],
+    esbuild: {
+        target: tsconfig.compilerOptions.target,
+    },
+});
