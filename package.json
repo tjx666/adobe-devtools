@@ -1,32 +1,45 @@
 {
-  "name": "adobe-devtools",
-  "version": "0.0.1",
-  "description": "A CEP extension for adobe extension developer",
-  "private": "true",
-  "preview": true,
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/tjx666/adobe-devtools.git"
-  },
-  "keywords": [
-    "adobe",
-    "extension",
-    "CEP",
-    "UXP",
-    "PS",
-    "AE",
-    "photoshop",
-    "afterEffects",
-    "extendScript"
-  ],
-  "author": "YuTengjing",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tjx666/adobe-devtools/issues"
-  },
-  "homepage": "https://github.com/tjx666/adobe-devtools#readme"
+    "name": "adobe-devtools",
+    "version": "0.0.1",
+    "description": "A CEP extension for adobe extension developer",
+    "private": "true",
+    "preview": true,
+    "main": "index.js",
+    "scripts": {
+        "start": "vite serve web",
+        "build": "vue-tsc --noEmit -p web && vite build web",
+        "preview": "vite preview web"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/tjx666/adobe-devtools.git"
+    },
+    "keywords": [
+        "adobe",
+        "extension",
+        "CEP",
+        "UXP",
+        "PS",
+        "AE",
+        "photoshop",
+        "afterEffects",
+        "extendScript"
+    ],
+    "author": "YuTengjing",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tjx666/adobe-devtools/issues"
+    },
+    "homepage": "https://github.com/tjx666/adobe-devtools#readme",
+    "dependencies": {
+        "vue": "^3.2.25"
+    },
+    "devDependencies": {
+        "@prettier/plugin-xml": "2.2.0",
+        "@vitejs/plugin-vue": "^2.3.3",
+        "prettier": "2.7.0",
+        "typescript": "^4.5.4",
+        "vite": "^2.9.9",
+        "vue-tsc": "^0.34.7"
+    }
 }

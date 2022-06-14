@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ExtensionManifest
+    Version="7.0"
+    ExtensionBundleId="org.yutengjing.dev.devtools"
+    ExtensionBundleVersion="0.0.1"
+    ExtensionBundleName="devtools"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+    <ExtensionList>
+        <Extension Id="org.yutengjing.dev.devtools.panel" Version="0.0.1" />
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="PHSP" Version="20" />
+            <Host Name="PHXS" Version="20" />
+        </HostList>
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="9" />
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="org.yutengjing.dev.devtools.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./web/public/redirect.html</MainPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Devtools</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>600</Height>
+                            <Width>800</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>2048</Height>
+                            <Width>2048</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>300</Height>
+                            <Width>500</Width>
+                        </MinSize>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
