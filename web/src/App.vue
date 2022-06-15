@@ -1,22 +1,30 @@
 <script setup lang="ts">
-import csInterface from './utils/CSInterface';
-
-function helloWorld() {
-    csInterface.invoke('helloWorld', null, { timeout: -1 });
-}
+import Sidebar from './components/sidebar/Sidebar.vue';
 </script>
 
 <template>
-    <button @click="helloWorld">Hello World</button>
+    <Sidebar />
 </template>
 
-<style>
+<style lang="scss">
+@import url('./normalize.css');
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(83, 83, 83);
+    color: white;
+}
+
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    width: 100vw;
+    height: 100vh;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
 }
 </style>

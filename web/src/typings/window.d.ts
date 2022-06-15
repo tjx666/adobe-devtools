@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { CSEvent, CSInterface } from '../utils/CSInterface';
+import { CSEvent, CSInterface } from '../utils/csInterface';
 import { Encoding, FS, Process, Util } from './cep-engine-extensions';
 
 declare global {
