@@ -105,6 +105,7 @@ declare global {
         __loadExtendScriptStart: number;
         __loadExtendScriptPromise: Promise<any>;
         __csi: CSInterface;
+        j: (path: string) => void;
     }
 
     // webpack define

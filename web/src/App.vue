@@ -4,6 +4,9 @@ import Sidebar from './components/sidebar/Sidebar.vue';
 
 <template>
     <Sidebar />
+    <router-view v-slot="{ Component }">
+        <keep-alive> <component :is="Component" /> </keep-alive>
+    </router-view>
 </template>
 
 <style lang="scss">
@@ -18,8 +21,14 @@ body {
 }
 
 #app {
+    display: flex;
+
     width: 100vw;
     height: 100vh;
+
+    > .page {
+        flex: 1;
+    }
 }
 
 ul,
