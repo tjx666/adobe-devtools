@@ -6,6 +6,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.3
   descriptor-info-type: 0.0.7
   javascript-stringify: 2.1.0
+  monaco-editor: 0.33.0
   prettier: 2.7.1
   sass: 1.52.3
   type-fest: 2.13.1
@@ -23,6 +24,7 @@ devDependencies:
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
   descriptor-info-type: 0.0.7
   javascript-stringify: 2.1.0
+  monaco-editor: 0.33.0
   prettier: 2.7.1
   sass: 1.52.3
   type-fest: 2.13.1
@@ -538,6 +540,10 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: true
+
+  /monaco-editor/0.33.0:
+    resolution: {integrity: sha512-VcRWPSLIUEgQJQIE0pVT8FcGBIgFoxz7jtqctE+IiCxWugD0DwgyQBcZBhdSrdMC84eumoqMZsGl2GTreOzwqw==}
     dev: true
 
   /nanoid/3.3.4:

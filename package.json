@@ -37,6 +37,7 @@
         "@vitejs/plugin-vue": "^2.3.3",
         "descriptor-info-type": "0.0.7",
         "javascript-stringify": "2.1.0",
+        "monaco-editor": "0.33.0",
         "prettier": "2.7.1",
         "sass": "1.52.3",
         "type-fest": "2.13.1",
