@@ -45,8 +45,11 @@
     // @include './utils/externalObjects.jsx'
     // @include './utils/EventEmitter.jsx'
     // @include './utils/emitter.jsx'
+    // @include './utils/descriptorInfo.jsx'
+    // @include './utils/layer.jsx'
 
-    // @include './helloWorld.jsx'
+    // services
+    // @include './services/layer.jsx'
 
     if (mod.constants.ENV === 'production') {
         $.level = 0;

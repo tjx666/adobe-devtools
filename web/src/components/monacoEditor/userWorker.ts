@@ -1,5 +1,3 @@
-import * as monaco from 'monaco-editor';
-
 // @ts-expect-error
 self.MonacoEnvironment = {
     getWorker: function (workerId: number, label: string) {

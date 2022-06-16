@@ -11,6 +11,10 @@ export default defineConfig({
                 find: /^path$/,
                 code: `const path = require('path'); export { path as default }`,
             }),
+            events: () => ({
+                find: /^events$/,
+                code: `const EventEmitter = require('events'); export { EventEmitter as default }`,
+            }),
         }),
     ],
     esbuild: {
