@@ -26,7 +26,7 @@
         }
     }
 
-    // reset ps-export API entry
+    // reset API entry
     $.global.mod = {};
 
     // define some global variable
