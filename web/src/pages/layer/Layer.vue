@@ -11,7 +11,7 @@ async function updateLayerDescInfo() {
 }
 
 onBeforeMount(async () => {
-    // updateLayerDescInfo();
+    updateLayerDescInfo();
     // psDomEvent.onEvent('select', updateLayerDescInfo);
 });
 
@@ -22,7 +22,7 @@ onUnmounted(() => {
 
 <template>
     <div class="page layer-page">
-        <MonacoEditor language="typescript" :source="layerDescInfo" />
+        <MonacoEditor language="json" :source="layerDescInfo" />
     </div>
 </template>
 

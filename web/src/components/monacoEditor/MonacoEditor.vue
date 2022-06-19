@@ -16,21 +16,29 @@ const { source, language } = toRefs(props);
 const editorContainer = ref<HTMLDivElement | null>(null);
 const editor = ref<Editor | null>(null);
 
-onMounted(() => {
+function initEditor() {
     editor.value = monaco.editor.create(editorContainer.value!, {
-        value: source.value,
-        language: language.value,
         theme: 'vs-dark',
+        language: language.value,
+        value: source.value,
+        readOnly: true,
+        lineNumbers: 'on',
         minimap: {
             enabled: false,
         },
     });
-});
+}
+
+onMounted(() => {});
 
 watch(source, (newSource, oldSource) => {
+    if (newSource.trim() !== '' && !editor.value) {
+        initEditor();
+    }
+
     if (newSource !== oldSource) {
         // debugger;
-        // editor.value?.setValue(newSource);
+        // editor.value.set
     }
 });
 

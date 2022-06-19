@@ -29,6 +29,6 @@ function handleSelectItem(item: string) {
 .sidebar {
     width: 100px;
     height: 100vh;
-    background-color: rgb(110, 110, 110);
+    background-color: rgb(74, 74, 74);
 }
 </style>
