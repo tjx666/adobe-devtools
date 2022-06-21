@@ -14,10 +14,10 @@ const props = defineProps<EditorProps>();
 const { source, language } = toRefs(props);
 
 const editorContainer = ref<HTMLDivElement | null>(null);
-const editor = ref<Editor | null>(null);
+let editor: Editor | null = null;
 
 function initEditor() {
-    editor.value = monaco.editor.create(editorContainer.value!, {
+    editor = monaco.editor.create(editorContainer.value!, {
         theme: 'vs-dark',
         language: language.value,
         value: source.value,
@@ -29,22 +29,19 @@ function initEditor() {
     });
 }
 
-onMounted(() => {});
+onMounted(() => {
+    initEditor();
+});
 
 watch(source, (newSource, oldSource) => {
-    if (newSource.trim() !== '' && !editor.value) {
-        initEditor();
-    }
-
     if (newSource !== oldSource) {
-        // debugger;
-        // editor.value.set
+        editor?.setValue(newSource);
     }
 });
 
-// watch(language, (newLanguage: SupportedLanguage) => {
-//     monaco.editor.setModelLanguage(editor.value!.getModel()!, newLanguage);
-// });
+watch(language, (newLanguage: SupportedLanguage) => {
+    monaco.editor.setModelLanguage(editor!.getModel()!, newLanguage);
+});
 
 defineExpose({
     editorContainer,

@@ -4,7 +4,7 @@ import MonacoEditor from '../../components/monacoEditor/MonacoEditor.vue';
 import csInterface from '../../utils/CSInterface';
 import psDomEvent from '../../utils/psDomEvent';
 
-const layerDescInfo = ref(JSON.stringify({ name: 'ly', age: 18 }, null, 4));
+const layerDescInfo = ref('');
 
 async function updateLayerDescInfo() {
     layerDescInfo.value = await csInterface.invoke<string>('layer.getActiveLayerDescriptorInfo');
@@ -12,11 +12,11 @@ async function updateLayerDescInfo() {
 
 onBeforeMount(async () => {
     updateLayerDescInfo();
-    // psDomEvent.onEvent('select', updateLayerDescInfo);
+    psDomEvent.onEvent('select', updateLayerDescInfo);
 });
 
 onUnmounted(() => {
-    // psDomEvent.stopListeningEvent('select', updateLayerDescInfo);
+    psDomEvent.stopListeningEvent('select', updateLayerDescInfo);
 });
 </script>
 
